@@ -1,0 +1,101 @@
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        body {
+            background-color: #bfe8fb;
+            margin: 0;
+            height: 100%;
+        }
+
+        #image-holder {
+            margin: 20%;
+        }
+
+        .slide-container {
+            width: 50%;
+            margin: auto;
+        }
+
+        .slider {
+            -webkit-appearance: none;
+            width: 100%;
+            height: 25px;
+            background: #d3d3d3;
+            outline: none;
+            opacity: 0.7;
+            -webkit-transition: .2s;
+            transition: opacity .2s;
+        }
+
+        .slider:hover {
+            opacity: 1;
+        }
+
+        .slider::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 25px;
+            height: 25px;
+            background: #4CAF50;
+            cursor: pointer;
+        }
+
+        .slider::-moz-range-thumb {
+            width: 25px;
+            height: 25px;
+            background: #4CAF50;
+            cursor: pointer;
+        }
+
+    </style>
+</head>
+<body>
+
+<br>
+
+<div class="image-wrapper">
+    <!--<img id="default" src="https://i.imgur.com/GbZfgcK.png" style="width:100%">-->
+
+    <!--array 1 images-->
+    <!--<img class="mySlides" src="https://i.imgur.com/THoRwvb.png" style="width: 100%">-->
+    <!--<img class="mySlides" src="https://i.imgur.com/1ntqneL.png" style="width: 100%">-->
+    <!--<img class="mySlides" src="https://i.imgur.com/IAzMDJ0.png" style="width: 100%">-->
+
+    <!--array 2 images-->
+    <!--<img class="mySlides2" src="https://i.imgur.com/A58ORdC.png" style="width: 100%">-->
+    <!--<img class="mySlides2" src="https://i.imgur.com/EQ7qRLb.png" style="width: 100%">-->
+    <!--<img class="mySlides2" src="https://i.imgur.com/9iOmOQp.png" style="width: 100%">-->
+
+
+    <!--array 3 images-->
+    <!--<img class="mySlides3" src="https://i.imgur.com/0nrhZtF.png" style="width: 100%">-->
+    <!--<img class="mySlides3" src="https://i.imgur.com/qdzH3UU.png" style="width: 100%">-->
+    <!--<img class="mySlides3" src="https://i.imgur.com/LwSkhRD.png" style="width: 100%">-->
+</div>
+
+<div class="slide-container">
+    <input type="range" min="1" max="100" value="50" class="slider" id="myRange">
+    <p>Value: <span id="demo"></span></p>
+</div>
+
+<div id="image-holder"></div>
+
+<script>
+    var slider = document.getElementById("myRange");
+    var output = document.getElementById("demo");
+    output.innerHTML = slider.value;
+
+    var array_1 = ["https://i.imgur.com/THoRwvb.png", "https://i.imgur.com/1ntqneL.png", "https://i.imgur.com/IAzMDJ0.png"];
+    var array_2 = ["https://i.imgur.com/A58ORdC.png", "https://i.imgur.com/EQ7qRLb.png", "https://i.imgur.com/9iOmOQp.png"];
+    var array_3 = ["https://i.imgur.com/0nrhZtF.png", "https://i.imgur.com/qdzH3UU.png", "https://i.imgur.com/LwSkhRD.png"];
+
+    slider.oninput = function() {
+        output.innerHTML = this.value;
+    }
+</script>
+
+<button type="button" onclick="document.getElementById(image-holder)"
+
+</body>
+</html>

@@ -1,0 +1,314 @@
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        body {
+            /*background-color: #bfe8fb;*/
+            margin: 0;
+            height: 100%;
+            background-image: url("https://i.imgur.com/COcWqIg.jpg");
+            background-size: 100%;
+        }
+
+        .header {
+            position: relative;
+        }
+
+        .header-bg {
+            position: relative;
+        }
+
+        .logo {
+            position: absolute;
+            top: 5%;
+        }
+
+        /*Create sticky drop down navigation bar*/
+        ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background-color: #333333;
+            position: -webkit-sticky;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        li {
+            float: left;
+        }
+
+        /*Format drop down button*/
+        li a, .drop-button {
+            display: inline-block;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+
+        /*Drop button and list when hovered over*/
+        li a:hover, .drop:hover .drop-button {
+            background-color: red;
+        }
+
+        li.drop {
+            display: inline-block;
+        }
+
+        /*Format drop down list*/
+        .drop-content {
+            display: none;
+            /*unset is what expands the background color*/
+            position: unset;
+            background-color: darkblue;
+            min-width: 160px;
+            box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+        }
+
+        .drop-content a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+            text-align: left;
+        }
+
+        .drop-content a:hover {
+            background-color: #f1f1f1;
+        }
+
+        .drop:hover .drop-content {
+            display: block;
+        }
+
+        .active {
+            background-color: #1f1eaf;
+        }
+
+        .all-slides {
+            margin-bottom: 500px;
+        }
+
+        .slidecontainer, .slide2container {
+            width: 50%;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .slider {
+            -webkit-appearance: none;
+            width: 100%;
+            height: 25px;
+            background: #d3d3d3;
+            outline: none;
+            opacity: 0.7;
+            -webkit-transition: .2s;
+            transition: opacity .2s;
+        }
+
+        .slider:hover {
+            opacity: 1;
+        }
+
+        .slider::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 25px;
+            height: 25px;
+            background: #4CAF50;
+            cursor: pointer;
+        }
+
+        .slider::-moz-range-thumb {
+            width: 25px;
+            height: 25px;
+            background: #4CAF50;
+            cursor: pointer;
+        }
+
+        .mySlides, .mySlides2, .mySlides3 {
+            display: none;
+        }
+
+        .image-wrapper {
+            margin-left: 20%;
+            margin-right: 20%;
+        }
+
+    </style>
+</head>
+<body>
+
+<div class="header">
+    <img class="header-bg" src="https://i.imgur.com/hmlVdZf.png" style="width:100%;">
+
+    <img class="logo" src="https://i.imgur.com/xSM3ltT.png" style="width:10%">
+</div>
+
+<ul>
+    <li><a class="active" href="javascript:void(0)">Home</a></li>
+    <li class="drop">
+        <a href="http://2018.igem.org/Team:MIT/Team" class="drop-button">Team</a>
+        <div class="drop-content">
+            <a href="http://2018.igem.org/Team:MIT/">Team Members</a>
+            <a href="http://2018.igem.org/Team:MIT/">Collaborations</a>
+        </div>
+    </li>
+    <li class="drop">
+        <a href="http://2018.igem.org/Team:MIT/Project" class="drop-button">Project</a>
+        <div class="drop-content">
+            <a href="http://2018.igem.org/Team:MIT/">Description</a>
+            <a href="http://2018.igem.org/Team:MIT/">Design</a>
+            <a href="http://2018.igem.org/Team:MIT/">Experiments</a>
+            <a href="http://2018.igem.org/Team:MIT/">Notebook</a>
+            <a href="http://2018.igem.org/Team:MIT/">InterLab</a>
+            <a href="http://2018.igem.org/Team:MIT/">Model</a>
+            <a href="http://2018.igem.org/Team:MIT/">Results</a>
+            <a href="http://2018.igem.org/Team:MIT/">Demonstration</a>
+            <a href="http://2018.igem.org/Team:MIT/">Improve</a>
+            <a href="http://2018.igem.org/Team:MIT/">Attributions</a>
+        </div>
+    </li>
+    <li class="drop">
+        <a href="http://2018.igem.org/Team:MIT/Parts" class="drop-button">Parts</a>
+        <div class="drop-content">
+            <a href="http://2018.igem.org/Team:MIT/">Parts Overview</a>
+            <a href="http://2018.igem.org/Team:MIT/">Basic Parts</a>
+            <a href="http://2018.igem.org/Team:MIT/">Composite Parts</a>
+            <a href="http://2018.igem.org/Team:MIT/">Parts Collection</a>
+        </div>
+    </li>
+    <li><a href="http://2018.igem.org/Team:MIT/Safety">Safety</a></li>
+    <li class="drop">
+        <a href="http://2018.igem.org/Team:MIT/Human-Practices" class="drop-button">Human Practices</a>
+        <div class="drop-content">
+            <a href="http://2018.igem.org/Team:MIT/">Human Practices</a>
+            <a href="http://2018.igem.org/Team:MIT/">Education and Engagement</a>
+        </div>
+    </li>
+    <li class="drop">
+        <a href="http://2018.igem.org/Team:MIT/Awards" class="drop-button">Awards</a>
+        <div class="drop-content">
+            <a href="http://2018.igem.org/Team:MIT/">Applied Design</a>
+            <a href="http://2018.igem.org/Team:MIT/">Entrepreneurship</a>
+            <a href="http://2018.igem.org/Team:MIT/">Hardware</a>
+            <a href="http://2018.igem.org/Team:MIT/">Measurement</a>
+            <a href="http://2018.igem.org/Team:MIT/">Model</a>
+            <a href="http://2018.igem.org/Team:MIT/">Plant</a>
+            <a href="http://2018.igem.org/Team:MIT/">Software</a>
+        </div>
+    </li>
+    <li><a href="http://2018.igem.org/Team:MIT/judging">Judging Form</a></li>
+</ul>
+<br>
+
+<div class="image-wrapper">
+    <img id="default" src="https://i.imgur.com/GbZfgcK.png" style="width: 100%">
+
+    <!--array 1 images-->
+    <img class="mySlides" src="https://i.imgur.com/THoRwvb.png" style="width: 100%">
+    <img class="mySlides" src="https://i.imgur.com/1ntqneL.png" style="width: 100%">
+    <img class="mySlides" src="https://i.imgur.com/IAzMDJ0.png" style="width: 100%">
+
+    <!--array 2 images-->
+    <img class="mySlides2" src="https://i.imgur.com/A58ORdC.png" style="width: 100%">
+    <img class="mySlides2" src="https://i.imgur.com/EQ7qRLb.png" style="width: 100%">
+    <img class="mySlides2" src="https://i.imgur.com/9iOmOQp.png" style="width: 100%">
+
+
+    <!--array 3 images-->
+    <img class="mySlides3" src="https://i.imgur.com/0nrhZtF.png" style="width: 100%">
+    <img class="mySlides3" src="https://i.imgur.com/qdzH3UU.png" style="width: 100%">
+    <img class="mySlides3" src="https://i.imgur.com/LwSkhRD.png" style="width: 100%">
+</div>
+
+<div class="all-slides">
+    <div class="slidecontainer">
+        <input type="range" min="1" max="3" value="1" class="slider" id="myRange">
+        <p>Value: <span id="demo"></span></p>
+    </div>
+
+    <div class="slide2container">
+        <input type="range" min="1" max="3" value="1" class="slider" id="myRange2">
+        <p>Language: <span id="demo"></span></p>
+    </div>
+</div>
+
+<script>
+    //Establish a range of sliders
+    var slider = document.getElementById("myRange"); //dimension 1: number
+    var slider2 = document.getElementById("myRange2"); //dimension 2: language
+
+
+    var x = document.getElementsByClassName("mySlides"); //japanese numbers
+    var y=document.getElementsByClassName("mySlides2"); //english numbers
+    var z=document.getElementsByClassName("mySlides3"); //actual numbers
+
+    // output.innerHTML = slider.value;
+
+    //call function when user adjusts value of slider
+    slider.oninput=function () {
+
+        // output.innerHTML = this.value;
+
+        //hide default image
+        var def = document.getElementById("default");
+        def.style.display="none";
+
+        //display corresponding image from array
+        var i;
+
+        //hide everything other than the correct image
+        for (i = 0; i < x.length; i++) {
+            x[i].style.display = "none";
+        }
+        for (i = 0; i < y.length; i++) {
+            y[i].style.display = "none";
+        }
+        for (i = 0; i < y.length; i++) {
+            z[i].style.display = "none";
+        }
+
+        //check dimension 2 slider to determine which array to display from
+        if(slider2.value==1)
+            x[slider.value-1].style.display = "block";
+        else if(slider2.value==2)
+            y[slider.value-1].style.display = "block";
+        else
+            z[slider.value-1].style.display = "block";
+
+        // output.innerHTML = this.value;
+    }
+
+    //repeat of the above function--both are required for dynamic control of image via both sliders
+    slider2.oninput=function (){
+
+        // output.innerHTML = this.value;
+
+        var def = document.getElementById("default");
+        def.style.display="none";
+
+        for (i = 0; i < x.length; i++) {
+            x[i].style.display = "none";
+        }
+        for (i = 0; i < y.length; i++) {
+            y[i].style.display = "none";
+        }
+        for (i = 0; i < y.length; i++) {
+            z[i].style.display = "none";
+        }
+
+        if(slider2.value==1)
+            x[slider.value-1].style.display = "block";
+        else if(slider2.value==2)
+            y[slider.value-1].style.display = "block";
+        else
+            z[slider.value-1].style.display = "block";
+    }
+
+</script>
+</body>
+</html>

@@ -1,0 +1,54 @@
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+    <style>
+        body{
+            margin-top:100px;
+            margin-left: 100px;
+        }
+        .container{
+            margin-right: 5%;
+            margin-left: 5%;
+        }
+        img{
+            position: absolute;
+            z-index: 2;
+        }
+        .block{
+            position: relative;
+            z-index: 1;
+        }
+
+    </style>
+
+
+</head>
+
+
+
+<body style="background-color: rgb(0,0,0)">
+
+<script>
+    $(document).ready(function() {
+        setTimeout(function() {
+            $("#ahh").fadeOut(1500);
+        },3000);
+    });
+</script>
+
+<div id="ahh" class="container">
+    <img src="https://i.imgur.com/eFnPGE9.png" style="width:75%">
+
+    <video class="block" width="90%" autoplay muted>
+        <source src="https://i.imgur.com/p8kW4Te.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+
+</div>
+
+
+</body>
+
+</html>

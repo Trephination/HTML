@@ -1,0 +1,264 @@
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+    <style>
+    body{
+        margin:0;
+        height: 100%;
+    }
+    img{
+
+    }
+    h1{
+        color: white;
+        font-family: Impact;
+        font-size: 4vw;
+    }
+    h2{
+        color: white;
+        font-family: Impact;
+        font-size: 6vw;
+    }
+    h3{
+        color: white;
+        font-family: "Times New Roman";
+        font-size: 4vw;
+    }
+    .slideshow{
+        position: absolute;
+        top: 5%;
+        left: 5%;
+        width: 90%;
+    }
+    .text2{
+        position: absolute;
+        /*top: 950px;
+        left: 600px;*/
+        top: 130%;
+        left: 45%;
+        z-index: 3;
+    }
+     .container2{
+         position: absolute;
+         /*top: 900px;
+         left: 80px;*/
+         top: 130%;
+         left: 10%;
+        z-index: 2;
+         margin-left: 5%;
+         margin-right: 80%;
+     }
+
+    .text3{
+        position: absolute;
+        top: 220%;
+        left: 5%;
+        z-index: 3;
+    }
+    .container3{
+        position: absolute;
+        top: 200%;
+        left: 35%;
+        width: 20%;
+        z-index: 2;
+    }
+
+    .text4{
+        position: absolute;
+        top: 300%;
+        left: 45%;
+        z-index: 3;
+    }
+    .container4{
+        position: absolute;
+        top: 300%;
+        left: 5%;
+        z-index: 2;
+    }
+
+    .text5{
+        position: absolute;
+        top: 380%;
+        left: 20%;
+        z-index: 3;
+    }
+    .text6{
+        position: absolute;
+        top: 410%;
+        left: 20%;
+        z-index: 3;
+    }
+    .text7{
+        position: absolute;
+        top: 440%;
+        left: 20%;
+        z-index: 3;
+    }
+    .tag{
+        position: absolute;
+        left: 200px;
+        width: 80px;
+        }
+    /*.tag:hover{
+        width: 90px;
+    }
+    .tag:hover .container{
+        display : block;
+    }*/
+    .globe{
+        position: absolute;
+        width: 30vw;
+    }
+    .tooth{
+        position: absolute;
+        width: 50vw;
+    }
+    .mutans{
+        width: 50vw;
+    }
+
+    .mySlides {display:none;}
+
+    .splash{
+        margin-right: 5%;
+        margin-left: 5%;
+    }
+    .mask{
+        position: absolute;
+        z-index: 10;
+    }
+    .block{
+        position: relative;
+        z-index: 9;
+    }
+
+    </style>
+
+
+</head>
+
+
+
+<body style="background-color: rgba(0,9,0,0.99)">
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script>
+    $(document).ready(function() {
+        setTimeout(function() {
+            $("#ahh").fadeOut(5000);
+        },3000);
+        $( "#main" ).slideUp( 300 ).delay( 5000 ).fadeIn( 400 );
+    });
+
+</script>
+
+
+<div id="ahh" class="splash">
+<img class ="mask" src="https://i.imgur.com/eFnPGE9.png" style="width:100%">
+<video class="block" width="100%" autoplay>
+    <source src="https://i.imgur.com/p8kW4Te.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+</video>
+
+</div>
+
+<div id="main" style="display: none">
+    <img src="https://i.imgur.com/COcWqIg.jpg" style="width:100%">
+
+<div class="slideshow">
+    <div class="w3-content w3-section" style="max-width:2000px">
+        <img class="mySlides" src="https://i.imgur.com/704CzjP.png" style="width: 100%">
+        <img class="mySlides" src="https://i.imgur.com/E7KOowI.png" style="width: 100%">
+        <img class="mySlides" src="https://i.imgur.com/8ZkSVgs.png" style="width: 100%">
+    </div>
+</div>
+
+
+<div class="container2">
+    <img  class="globe" src="https://i.imgur.com/cuaSSwm.png" >
+    <!--<img class="tag" src="https://i.imgur.com/JX3tXBf.png">-->
+</div>
+
+
+    <div class="text2">
+        <h1>Dental Caries affects 93% <br> of the population worldwide</h1>
+    </div>
+
+    <div class="container3" >
+        <img  class="tooth" src=" https://i.imgur.com/oQA9pah.png">
+    </div>
+
+    <div class="text3">
+        <h1>Plaque formation and <br> tooth acidification is <br> primarily caused by <br> Streptococcus mutans</h1>
+    </div>
+
+    <div class="container4" >
+        <img  class="mutans" src=" https://i.imgur.com/JRZSY54.png" style="width: 80%">
+    </div>
+
+    <div class="text4">
+        <h1>S. mutans communicate <br> and form biofilms on <br> the teeth via <br> Quorum Sensing</h1>
+    </div>
+
+
+    <div class="text5">
+        <h2>Our Project:</h2>
+    </div>
+
+    <div class="text6">
+        <h3>Engineer oral cells to sense the signaling peptide <br> used by S. mutans in quorum sensing</h3>
+    </div>
+    <div class="text7">
+        <h3>Secrete anti-biofilm proteins that stop tooth decay <br> at the source</h3>
+    </div>
+
+</div>
+    <script src="https://unpkg.com/scrollreveal/dist/scrollreveal.min.js">// GENERAL SETTING
+    </script>
+
+    <script>
+        var myIndex = 0;
+        carousel();
+
+        function carousel() {
+            var i;
+            var x = document.getElementsByClassName("mySlides");
+            for (i = 0; i < x.length; i++) {
+                x[i].style.display = "none";
+            }
+            myIndex++;
+            if (myIndex > x.length) {myIndex = 1}
+            x[myIndex-1].style.display = "block";
+            setTimeout(carousel, 2000); // Change image every 2 seconds
+        }
+    </script>
+
+    <script>
+
+        window.sr = ScrollReveal({ reset: true });
+
+        // Custom Settings
+        sr.reveal('.globe', { duration: 2000 });
+        sr.reveal('.text2', { duration: 2000 });
+
+        sr.reveal('.tooth', {
+            origin: 'right',
+            duration: 2000
+        });
+        sr.reveal('.text3', { duration: 2000 });
+
+        sr.reveal('.mutans', { duration: 2000 });
+        sr.reveal('.text4', { duration: 2000 });
+
+        sr.reveal('.text5', { duration: 2000 });
+        sr.reveal('.text6', { duration: 2000 });
+        sr.reveal('.text7', { duration: 2000 });
+
+
+    </script>
+
+</body>
+
+</html>
