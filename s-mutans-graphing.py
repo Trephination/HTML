@@ -1,6 +1,10 @@
 import math
-import matplotlib
+import matplotlib.pyplot as plt
 import sys
+import matplotlib
+import pandas as pd
+# need xlrd as well
+# also need openpyxl
 
 
 def manual_input():
@@ -22,11 +26,15 @@ def manual_input():
     return temp_d
 
 
-def auto_input(filename):
+def auto_input(filename_location):
     """
     Collect well data from txt or xls file
     :param filename: filename to strip
     :return: Dictionary with all well data for the experiment
     """
+    df = pd.read_excel(filename_location, 0, index_col='StatusDate')
+    df.dtypes
 
+
+auto_input(r"D:\Users\Andres\Documents\HTML\TestData1.xlsx")
 
