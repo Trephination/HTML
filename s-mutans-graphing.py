@@ -1,10 +1,8 @@
-import math
 import matplotlib.pyplot as plt
 import sys
 import matplotlib
 import pandas as pd
-# need xlrd as well
-# also need openpyxl
+import numpy.random as np
 
 
 def manual_input():
@@ -29,12 +27,19 @@ def manual_input():
 def auto_input(filename_location):
     """
     Collect well data from txt or xls file
-    :param filename: filename to strip
+    :param filename_location: filename to strip
     :return: Dictionary with all well data for the experiment
     """
-    df = pd.read_excel(filename_location, 0, index_col='StatusDate')
-    df.dtypes
+    ds = pd.read_excel(filename_location, header=None, names=['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12'])
+    print(ds.head(5))
 
 
-auto_input(r"D:\Users\Andres\Documents\HTML\TestData1.xlsx")
+auto_input(r"C:\Users\Andres\Documents\HTML\TestData1.xlsx")
+
+# location = r'C:\Users\Andres\Documents\HTML\Lesson3.xlsx'
+
+# df = pd.read_excel(location, 0, index_col='StatusDate')
+# print(df.dtypes)
+# print(df.index)
+# print(df.head())
 
