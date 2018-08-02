@@ -26,7 +26,7 @@ def auto_input(filename):
     """
     Collect well data from txt or xls file
     :param filename: filename to strip
-    :return:
+    :return: Dictionary with all well data for the experiment
     """
-    print('okay testing again')
+
 
