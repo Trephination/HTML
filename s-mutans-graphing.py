@@ -30,7 +30,8 @@ def auto_input(filename_location):
     :param filename_location: filename to strip
     :return: Dictionary with all well data for the experiment
     """
-    ds = pd.read_excel(filename_location, header=None, names=['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12'])
+    ds = pd.read_excel(filename_location, header=None, names=['1', '2', '3', '4', '5', '6',
+                                                              '7', '8', '9', '10', '11', '12'])
     print(ds.head(5))
 
 
@@ -42,4 +43,3 @@ auto_input(r"D:\Users\Andres\Documents\HTML\TestData1.xlsx")
 # print(df.dtypes)
 # print(df.index)
 # print(df.head())
-
