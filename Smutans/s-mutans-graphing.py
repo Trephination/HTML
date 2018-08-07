@@ -42,3 +42,9 @@ def auto_input(filename_location):
 # location = r'D:\Users\Andres\Documents\HTML\Smutans\Lesson3.xlsx'
 
 
+def bar_plot_setup(plate_data):
+    """
+    Take plate data and graph it on a bar graph
+    :param plate_data: dictionary containing plate data
+    :return: bar plot
+    """
