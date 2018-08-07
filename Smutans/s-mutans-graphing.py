@@ -35,11 +35,10 @@ def auto_input(filename_location):
     print(ds.head(5))
 
 
-auto_input(r"D:\Users\Andres\Documents\HTML\TestData1.xlsx")
+# auto_input(location)
 
-# location = r'C:\Users\Andres\Documents\HTML\Lesson3.xlsx'
+# C for laptop, D for Desktop, specific to Andres's computers
+# location = r'C:\Users\Andres\Documents\HTML\Smutans\Lesson3.xlsx'
+# location = r'D:\Users\Andres\Documents\HTML\Smutans\Lesson3.xlsx'
 
-# df = pd.read_excel(location, 0, index_col='StatusDate')
-# print(df.dtypes)
-# print(df.index)
-# print(df.head())
+
