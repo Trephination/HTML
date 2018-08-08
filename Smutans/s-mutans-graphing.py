@@ -47,10 +47,10 @@ def manual_input():
         else:
             if x[2] not in string.ascii_letters:
                 well_label.append(x[0:2])
-                well_count.append(x[2:])
+                well_count.append(int(x[2:]))
             else:
                 well_label.append(x[0:3])
-                well_count.append(x[3:])
+                well_count.append(int(x[3:]))
 
     return well_label, well_count
 
@@ -72,8 +72,42 @@ def auto_input(filename_location):
 # If using for your own computer, make sure that this is updated to reflect ur own location,
 # just add a 3rd comment line here, don't forget the r
 # location = r'C:\Users\Andres\Documents\HTML\Smutans\TestData1.xlsx'
-location = r'D:\Users\Andres\Documents\HTML\Smutans\TestData1.xlsx'
+# location = r'D:\Users\Andres\Documents\HTML\Smutans\TestData1.xlsx'
 # auto_input(location)
+
+
+def raw_data_processing(raw_data, plated_volume):
+    """
+    Take raw CFU data and convert to cell/biofilm count
+    :param raw_data: CFU count
+    :param plated_volume: amount of liquid dilution we plated per well (ul)
+    :return: cell/biofilm count
+    """
+    well_dilution_code = {'e': 5, 'f': 6, 'g': 7, 'h': 8}
+    cell_count = []
+    cfu_count = raw_data[1]
+    count = 0
+
+    for i in raw_data[0]:
+        x = 10 ** int(well_dilution_code[i[-1]])
+
+        if plated_volume == 20:
+            y = cfu_count[count] * 5 * x
+            print(y)
+        else:
+            y = cfu_count[count] * 5 * 1.333 * x
+
+        cell_count.append(y)
+
+        print(int(well_dilution_code[i[-1]]), cfu_count[count])
+
+        count += 1
+
+    return raw_data[0], cell_count
+
+
+# will later change to be a prompt
+current_plated_volume = 15
 
 
 def bar_plot_setup(plate_data):
@@ -94,4 +128,4 @@ def bar_plot_setup(plate_data):
 
 
 results = manual_input()
-bar_plot_setup(results)
+print(raw_data_processing(results, 20))
