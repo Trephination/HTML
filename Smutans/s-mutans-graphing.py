@@ -93,14 +93,10 @@ def raw_data_processing(raw_data, plated_volume):
 
         if plated_volume == 20:
             y = cfu_count[count] * 5 * x
-            print(y)
         else:
             y = cfu_count[count] * 5 * 1.333 * x
 
         cell_count.append(y)
-
-        print(int(well_dilution_code[i[-1]]), cfu_count[count])
-
         count += 1
 
     return raw_data[0], cell_count
