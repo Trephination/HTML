@@ -1,0 +1,316 @@
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link href="https://fonts.googleapis.com/css?family=Dosis|Raleway" rel="stylesheet">
+
+    <style>
+    body{
+        margin:0;
+    }
+
+    .bg{
+        position: absolute;
+    }
+
+    .dropdown:hover .dropdown-content {
+        display: block;
+    }
+
+    ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        background-color: #333;
+        position: fixed;
+        width: 100%;
+        -webkit-box-shadow: 0 8px 6px -6px #2c2c2c;
+        -moz-box-shadow: 0 8px 6px -6px #2c2c2c;
+        box-shadow: 0 8px 6px -6px #2c2c2c;
+        top: 0;
+        z-index: 20;
+    }
+
+    li {
+        float: left;
+    }
+
+    li a {
+        display: block;
+        color: white;
+        text-align: center;
+        padding: 15px 30px;
+        text-decoration: none;
+    }
+
+    li a:hover {
+        background-color: #410081;
+    }
+
+    .active {
+        background-color: #9055ff;
+    }
+
+    .content{
+        margin-top: 1000px;
+    }
+
+    .image {
+        display: block;
+        width: 100%;
+        height: auto;
+        transition: .5s ease;
+    }
+
+    .overlay {
+        position: absolute;
+        opacity: 0;
+        width: 20vw;
+        transition: .5s ease;
+        background-color: #008CBA;
+    }
+
+    .container:hover .overlay {
+        opacity: 1;
+    }
+    .container:hover .image{
+        opacity:.5;
+    }
+
+    .text {
+        width: 22.8vw;
+        font-family: 'Raleway', sans-serif;;
+        font-size: 1.4vw;
+        color: white;
+        position: absolute;
+        -webkit-transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+        text-align: left;
+        line-height: 1.3;
+    }
+    </style>
+
+</head>
+
+
+
+<body style="background-color: rgb(189,154,255)">
+
+    <img class="bg" src="https://i.imgur.com/6rOHuLj.png" style="width:100%">
+
+
+    <ul>
+        <li><a class="active" href="#home">Home</a></li>
+        <li><a href="#team">Team</a></li>
+        <li><a href="#project">Project</a></li>
+        <li><a href="#parts">Parts</a></li>
+        <li><a href="#safety">Safety</a></li>
+        <li><a href="#hp">Human Practices</a></li>
+        <li><a href="#awards">Awards</a></li>
+    </ul>
+
+    <img src="https://i.imgur.com/9M2PrPe.jpg" style=" width: 80vw; position: absolute; top: 8vw; left: 10vw;">
+
+    <!--Keira-->
+    <div class="container">
+        <img src="https://i.imgur.com/VMbq1is.jpg" alt="Avatar" class="image" style="width:23vw;position: absolute; top: 60vw; left: 10vw;">
+        <div class="overlay">
+            <div class="text" style="position: absolute; top:70vw; left: 22vw;">
+                Keira Ahern, Class of 2022<br>
+                Major: Engineering<br>
+                From: Boston<br>
+                <p> </p>
+                What do you do for fun?<br>
+                "I like to read, draw and hang out with friends."<br>
+                <p> </p>
+                Quote:<br>
+                "Andres is a bitch"
+            </div>
+        </div>
+    </div>
+
+    <!--Bitch-->
+    <div class="container">
+        <img src="https://i.imgur.com/UppfsRv.jpg" alt="Avatar" class="image" style="width:23vw;position: absolute; top: 60vw; left: 38.5vw;">
+        <div class="overlay">
+            <div class="text" style="position: absolute; top:70vw; left: 50.5vw;">
+                Andres Alvarado, Class of 2020<br>
+                Major: Biological Engineering<br>
+                From: Los Angeles<br>
+                <p> </p>
+                What do you do for fun?<br>
+                "I only enjoy the finest of Japanese culture."<br>
+                <p> </p>
+                Quote:<br>
+                "I am in fact a bitch"
+            </div>
+        </div>
+    </div>
+
+    <!--Joy-->
+    <div class="container">
+        <img src="https://i.imgur.com/ixMRcdt.jpg" alt="Avatar" class="image" style="width:23vw;position: absolute; top: 60vw; left: 67vw;">
+        <div class="overlay">
+            <div class="text" style="position: absolute; top:71vw; left: 79vw;">
+                Joy Fan, Class of 2020<br>
+                Major: Computer Science and Biology<br>
+                From: Kentucky<br>
+                <p> </p>
+                What do you do for fun?<br>
+                "I'm a digital artist, musician, and writer."<br>
+                <p> </p>
+                Quote:<br>
+                "Andres is a bitch"
+            </div>
+        </div>
+    </div>
+
+    <!--Hang-->
+    <div class="container">
+        <img src="https://i.imgur.com/YiqS7d2.jpg" alt="Avatar" class="image" style="width:23vw;position: absolute; top: 90vw; left: 10vw;">
+        <div class="overlay">
+            <div class="text" style="position: absolute; top:99vw; left: 22vw;">
+                Hang Le, Class of 2020<br>
+                Major: Biological Engineering<br>
+                From: Vietnam<br>
+                <p> </p>
+                What do you do for fun?<br>
+                "Hiking, biking, singing, memeing."<br>
+                <p> </p>
+                Quote:<br>
+                "Andres is a bitch"
+            </div>
+        </div>
+    </div>
+
+    <!--Maya-->
+    <div class="container">
+        <img src="https://i.imgur.com/ujBSAdE.jpg" alt="Avatar" class="image" style="width:23vw;position: absolute; top: 90vw; left: 38.5vw;">
+        <div class="overlay">
+            <div class="text" style="position: absolute; top:99vw; left: 50.5vw;">
+                Maya Levy, Class of 2021<br>
+                Major: Biological Engineering<br>
+                From: Miami, Florida<br>
+                <p> </p>
+                What do you do for fun?<br>
+                "Mostly I paint and build things!"<br>
+                <p> </p>
+                Quote:<br>
+                "Andres is a bitch"
+            </div>
+        </div>
+    </div>
+
+    <!--Alex-->
+    <div class="container">
+        <img src="https://i.imgur.com/J6AHJAP.jpg" alt="Avatar" class="image" style="width:23vw;position: absolute; top: 90vw; left: 67vw;">
+        <div class="overlay">
+            <div class="text" style="position: absolute; top:101vw; left: 79vw;">
+                Alexandrea Pouliot, Class of 2021<br>
+                Major: Biological Engineering, Russian and Eurasian Studies<br>
+                From: Warwick, Rhode Island<br>
+                <p> </p>
+                What do you do for fun?<br>
+                "I am a nerd :) I love to read, write, and play Dungeons and Dragons."<br>
+                <p> </p>
+                Quote:<br>
+                "Andres is a bitch"
+            </div>
+        </div>
+    </div>
+
+    <!--Lexi-->
+    <div class="container">
+        <img src="https://i.imgur.com/iRLLNCe.jpg" alt="Avatar" class="image" style="width:23vw;position: absolute; top: 120vw; left: 10vw;">
+        <div class="overlay">
+            <div class="text" style="position: absolute; top:130vw; left: 22vw;">
+                Lexi Schneider, Class of 2021<br>
+                Major: Biological Engineering<br>
+                From: Pennsylvania<br>
+                <p> </p>
+                What do you do for fun?<br>
+                "Play soccer and ice hockey, listen to music, pet dogs"<br>
+                <p> </p>
+                Quote:<br>
+                "Andres is a bitch"
+            </div>
+        </div>
+    </div>
+
+    <!--Tooba-->
+    <div class="container">
+        <img src="https://i.imgur.com/e5cGS4O.jpg" alt="Avatar" class="image" style="width:23vw;position: absolute; top: 120vw; left: 38.5vw;">
+        <div class="overlay">
+            <div class="text" style="position: absolute; top:130vw; left: 50.5vw;">
+                Tooba Shahid, Class of 2021<br>
+                Major: Biological Engineering<br>
+                From: Pakistan<br>
+                <p> </p>
+                What do you do for fun?<br>
+                "Binge watch Netflix for 12 straight hours..."<br>
+                <p> </p>
+                Quote:<br>
+                "Andres is a bitch"
+            </div>
+        </div>
+    </div>
+
+    <!--Aidan-->
+    <div class="container">
+        <img src="https://i.imgur.com/Qrt3j9m.jpg" alt="Avatar" class="image" style="width:23vw;position: absolute; top: 120vw; left: 67vw;">
+        <div class="overlay">
+            <div class="text" style="position: absolute; top:130vw; left: 79vw;">
+                Aidan Simpson, Class of 2021<br>
+                Major: Biological Engineering, Management<br>
+                From: Los Angeles<br>
+                <p> </p>
+                What do you do for fun?<br>
+                "Fencing, video games."<br>
+                <p> </p>
+                Quote:<br>
+                "Andres is a bitch"
+            </div>
+        </div>
+    </div>
+
+    <!--Krissy-->
+    <div class="container">
+        <img src="https://i.imgur.com/mpN6T7N.jpg" alt="Avatar" class="image" style="width:23vw;position: absolute; top: 150vw; left: 25vw;">
+        <div class="overlay">
+            <div class="text" style="position: absolute; top:161vw; left: 37vw;">
+                Kristina Stoyanova , Class of 2023<br>
+                Major: Biological Engineering<br>
+                From: Franklin, MA<br>
+                <p> </p>
+                What do you do for fun?<br>
+                "Mock Trial, Theater, Tennis, Fencing, Long walks around Boston."<br>
+                <p> </p>
+                Quote:<br>
+                "Andres is a bitch"
+            </div>
+        </div>
+    </div>
+
+    <!--Reese-->
+    <div class="container">
+        <img src="https://i.imgur.com/mpN6T7N.jpg" alt="Avatar" class="image" style="width:23vw;position: absolute; top: 150vw; left: 53.5vw;">
+        <div class="overlay">
+            <div class="text" style="position: absolute; top:159vw; left: 65.5vw;">
+                Fake Reese Alden<br>
+                Major: <br>
+                From: A<br>
+                <p> </p>
+                What do you do for fun?<br>
+                "Fun stuff"<br>
+                <p> </p>
+                Quote:<br>
+                "Andres is a bitch"
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>
