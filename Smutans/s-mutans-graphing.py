@@ -85,25 +85,38 @@ def raw_data_processing(raw_data, plated_volume):
     """
     well_dilution_code = {'e': 5, 'f': 6, 'g': 7, 'h': 8}
     cell_count = []
+    well_label = raw_data[0]
     cfu_count = raw_data[1]
-    count = 0
 
-    for i in raw_data[0]:
+    for i in well_label:
         x = 10 ** int(well_dilution_code[i[-1]])
 
         if plated_volume == 20:
-            y = cfu_count[count] * 5 * x
+            y = cfu_count[well_label.index(i)] * 5 * x
         else:
-            y = cfu_count[count] * 5 * 1.333 * x
+            y = cfu_count[well_label.index(i)] * 5 * 1.333 * x
 
         cell_count.append(y)
-        count += 1
 
-    return raw_data[0], cell_count
+    return well_label, cell_count
 
 
-# will later change to be a prompt
-current_plated_volume = 15
+def data_grouping(well_labels, well_data, total_wells):
+    """
+    Take well data and group well dilutions together regardless of whether or not data
+    is CFU or individual bacteria count
+    :param well_labels: string of well name of length 4 to 5
+    :param well_data: unknown data type for every well
+    :param total_wells: int representing total number of wells/groups to make
+    """
+    group_container, data_container = [[] for a in range(total_wells)], [[] for b in range(total_wells)]
+
+    for i in well_labels:
+        group = int(i[:-1])
+        group_container[group - 1].append(i)
+        data_container[group - 1].append(well_data[well_labels.index(i)])
+
+    return group_container, data_container
 
 
 def bar_plot_setup(plate_data):
@@ -123,8 +136,9 @@ def bar_plot_setup(plate_data):
     plt.show()
 
 
-results = manual_input()
-print(raw_data_processing(results, 20))
-
-
-# test to see
+if __name__ == '__main__':
+    # results = manual_input()
+    test_results = (['1e', '1f', '1g', '1h', '2e', '2f', '2g', '2h', '3e', '3f', '3g', '3h'],
+                    [35, 22, 16, 9, 58, 46, 31, 19, 86, 62, 44, 29])
+    well_names, well_info = raw_data_processing(test_results, 20)
+    data_grouping(well_names, well_info, 3)
