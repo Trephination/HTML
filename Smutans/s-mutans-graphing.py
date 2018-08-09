@@ -108,6 +108,7 @@ def data_grouping(well_labels, well_data, total_wells):
     :param well_labels: string of well name of length 4 to 5
     :param well_data: unknown data type for every well
     :param total_wells: int representing total number of wells/groups to make
+    :return tuple with grouped labels and data
     """
     group_container, data_container = [[] for a in range(total_wells)], [[] for b in range(total_wells)]
 
@@ -119,19 +120,40 @@ def data_grouping(well_labels, well_data, total_wells):
     return group_container, data_container
 
 
-def bar_plot_setup(plate_data):
+def data_averaging(grouped_wells, grouped_data):
+    """
+    Find average data count across all dilutions for every well
+    :param grouped_wells: list of lists for every well group
+    :param grouped_data: list of lists for data corresponding to grouped_wells
+    :return tuple group number and average data count
+    """
+    higher_groups = []
+    average_container = []
+
+    for i in grouped_wells:
+        higher_groups.append(1 + int(grouped_wells.index(i)))
+        average_container.append(sum(grouped_data[grouped_wells.index(i)]) / len(grouped_data[grouped_wells.index(i)]))
+
+    return higher_groups, average_container
+
+
+def bar_plot_setup(plate_labels, plate_data):
     """
     Take plate data and graph it on a bar graph
-    :param plate_data: tuple of two lists containing plate data
+    :param plate_labels: np arr
+    :param plate_data:
     :return: bar plot
     """
-    objects = np.array(plate_data[0])
-    values = plate_data[1]
+    plate_labels_2 = []
+    for i in plate_labels:
+        plate_labels_2.append(str(i))
 
-    plt.bar(objects, values, align='center', alpha=0.5)
-    plt.xticks(values, objects)
-    plt.ylabel('CFu Count')
-    plt.title('Colony forming units of different well conditions and dilutions')
+    height = plate_data
+    bars = tuple(plate_labels_2)
+    y_pos = np.arange(len(bars))
+
+    plt.bar(y_pos, height)
+    plt.xticks(y_pos, bars)
 
     plt.show()
 
@@ -141,4 +163,13 @@ if __name__ == '__main__':
     test_results = (['1e', '1f', '1g', '1h', '2e', '2f', '2g', '2h', '3e', '3f', '3g', '3h'],
                     [35, 22, 16, 9, 58, 46, 31, 19, 86, 62, 44, 29])
     well_names, well_info = raw_data_processing(test_results, 20)
-    data_grouping(well_names, well_info, 3)
+    print(well_names, well_info)
+
+    g_well_names, g_well_info = data_grouping(well_names, well_info, 3)
+    print(g_well_names, g_well_info)
+
+    h_group, avg_data = data_averaging(g_well_names, g_well_info)
+    print(h_group, avg_data)
+
+    bar_plot_setup(h_group, avg_data)
+
