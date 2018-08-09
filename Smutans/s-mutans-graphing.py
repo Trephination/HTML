@@ -158,18 +158,29 @@ def bar_plot_setup(plate_labels, plate_data):
     plt.show()
 
 
+# def bioflim_well_protocol()
+
+
 if __name__ == '__main__':
-    # results = manual_input()
-    test_results = (['1e', '1f', '1g', '1h', '2e', '2f', '2g', '2h', '3e', '3f', '3g', '3h'],
-                    [35, 22, 16, 9, 58, 46, 31, 19, 86, 62, 44, 29])
-    well_names, well_info = raw_data_processing(test_results, 20)
-    print(well_names, well_info)
+    # Testing
+    # test_results = (['1e', '1f', '1g', '1h', '2e', '2f', '2g', '2h', '3e', '3f', '3g', '3h'],
+    #                 [35, 22, 16, 9, 58, 46, 31, 19, 86, 62, 44, 29])
+    # well_names, well_info = raw_data_processing(test_results, 20)
+    # print(well_names, well_info)
+    #
+    # g_well_names, g_well_info = data_grouping(well_names, well_info, 3)
+    # print(g_well_names, g_well_info)
+    #
+    # h_group, avg_data = data_averaging(g_well_names, g_well_info)
+    # print(h_group, avg_data)
+    #
+    # bar_plot_setup(h_group, avg_data)
 
-    g_well_names, g_well_info = data_grouping(well_names, well_info, 3)
-    print(g_well_names, g_well_info)
-
-    h_group, avg_data = data_averaging(g_well_names, g_well_info)
-    print(h_group, avg_data)
-
-    bar_plot_setup(h_group, avg_data)
-
+    # Actual use
+    (raw_names, raw_count) = manual_input()
+    plate_volume = input('Enter plated well volume:')
+    well_names, well_info = raw_data_processing((raw_names, raw_count), plate_volume)
+    num_wells = input('Enter number of well conditions:')
+    well_name_groups, well_info_groups = data_grouping(well_names, well_info, num_wells)
+    group_title, avg_data_2 = data_averaging(well_name_groups, well_info_groups)
+    bar_plot_setup(group_title, avg_data_2)
