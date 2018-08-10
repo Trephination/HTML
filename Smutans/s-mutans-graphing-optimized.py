@@ -149,17 +149,15 @@ class BiofilmCfuCount(object):
         plt.ylabel('Proportion of Biofilm CFUs to Planktonic CFUs')
         plt.title('Experiment 2.5 (Sucrose Concentration) 7 Aug 2018')
 
-
         plt.show()
 
 
 if __name__ == '__main__':
     # (a, b) = manual_input()
-    test = [['1e', '1f', '1g', '1h', '2e', '2f', '2g', '2h', '3e', '3f', '3g', '3h', '4e', '4f', '4g', '4h', '5e', '5f', '5g', '5h', '6e', '6f', '6g', '6h'],
+    experiment_2_5 = [['1e', '1f', '1g', '1h', '2e', '2f', '2g', '2h', '3e', '3f', '3g', '3h',
+                       '4e', '4f', '4g', '4h', '5e', '5f', '5g', '5h', '6e', '6f', '6g', '6h'],
             [0, 0, 0, 0, 127, 5, 9, 0, 22, 0, 0, 0, 25, 27, 0, 0, 20, 3, 0, 0, 35, 2, 0, 0],
             [0, 0, 0, 0, 21, 1, 0, 0, 32, 3, 0, 0, 54, 5, 0, 0, 42, 2, 0, 0, 17, 1, 1, 0]]
-    for i in test:
-        print(len(i))
     c = (6, 15)
-    wao = BiofilmCfuCount(test, c)
+    wao = BiofilmCfuCount(experiment_2_5, c)
     wao.run_and_plot()
