@@ -116,6 +116,7 @@ class BiofilmCfuCount(object):
             try:
                 self.organized_data.append(sum(numbers[groups.index(i)]) / len(numbers[groups.index(i)]))
             except ZeroDivisionError:
+                print(len(numbers[groups.index(i)]))
                 self.organized_data.append(sum(numbers[groups.index(i)]) / 1)
             try:
                 self.organized_proportions.append(sum(numbers[groups.index(i)]) / (sum(numbers[groups.index(i)]) + sum(counter_numbers[groups.index(i)])))
@@ -128,6 +129,10 @@ class BiofilmCfuCount(object):
         """
         self.raw_processing()
         self.data_averaging_and_cleaning()
+
+        print(self.organized_names)
+        print(self.organized_data)
+        print(self.organized_proportions)
 
         height = self.organized_data
         bars = tuple(self.organized_names.copy())
