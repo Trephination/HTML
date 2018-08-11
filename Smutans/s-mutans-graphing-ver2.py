@@ -16,7 +16,9 @@ def troubleshoot():
     libraries = (sys, pd, openpyxl, matplotlib, pip)
     for i in libraries:
         try:
-            print(i.__version__)
+            print(str(i), 'version:', i.__version__)
+        except AttributeError:
+            pass
         except ModuleNotFoundError:
             print('You do not have', str(i), 'installed.')
             print('You can do so via your interpreter or:')
@@ -161,11 +163,13 @@ class BiofilmCfuCount(object):
 
 
 if __name__ == '__main__':
+    troubleshoot()
+
     # (a, b) = manual_input()
     experiment_2_5 = [['1e', '1f', '1g', '1h', '2e', '2f', '2g', '2h', '3e', '3f', '3g', '3h',
                        '4e', '4f', '4g', '4h', '5e', '5f', '5g', '5h', '6e', '6f', '6g', '6h'],
-            [0, 0, 0, 0, 127, 5, 9, 0, 22, 0, 0, 0, 25, 27, 0, 0, 20, 3, 0, 0, 35, 2, 0, 0],
-            [0, 0, 0, 0, 21, 1, 0, 0, 32, 3, 0, 0, 54, 5, 0, 0, 42, 2, 0, 0, 17, 1, 1, 0]]
+                      [0, 0, 0, 0, 127, 5, 9, 0, 22, 0, 0, 0, 25, 27, 0, 0, 20, 3, 0, 0, 35, 2, 0, 0],
+                      [0, 0, 0, 0, 21, 1, 0, 0, 32, 3, 0, 0, 54, 5, 0, 0, 42, 2, 0, 0, 17, 1, 1, 0]]
     c = (6, 15)
     wao = BiofilmCfuCount(experiment_2_5, c)
     wao.run_and_plot()
