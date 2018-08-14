@@ -59,9 +59,10 @@ def auto_input(filename_location):
     :param filename_location: str of filename/location to read
     :return: tuple of lists with data labels and names
     """
-    ds = pd.read_excel(filename_location, header=None, names=[])
-    print(ds.head(5))
-    # TODO: make work
+    ds = pd.read_excel(filename_location, header=None)
+
+    for i in range(len(ds.columns)):
+        print(ds.values.T[i].tolist())
 
 
 class BiofilmCfuCount(object):
@@ -124,7 +125,8 @@ class BiofilmCfuCount(object):
 
             self.organized_film.append(sum(film[groups.index(i)]) / len(film[groups.index(i)]))
             try:
-                self.organized_plank.append(sum(film[groups.index(i)]) / (sum(film[groups.index(i)]) + sum(plank[groups.index(i)])))
+                self.organized_plank.append(sum(film[groups.index(i)]) / (sum(film[groups.index(i)]) +
+                                                                          sum(plank[groups.index(i)])))
             except ZeroDivisionError:
                 self.organized_plank.append(sum(film[groups.index(i)]) / 1)
 
@@ -162,39 +164,36 @@ class BiofilmCfuCount(object):
             plt.show()
 
 
+def run_program():
+    """
+    Ask user how they want to input data and run program
+    """
+    print('Biofilm assay selected.')
+    x = input('Enter data manually or automatically?')
+
+    if str.lower(x) == 'manually':
+        z = BiofilmCfuCount(manual_input(), (input('Enter number of conditions:'), input('Enter plated volume:')))
+        z.run_and_plot()
+
+    elif str.lower(x) == 'automatically':
+        y = input('Enter file name with extension:')
+        b = r"C:\Users\Andres\Documents\HTML\Smutans" + '\\' + str(y)
+        a = BiofilmCfuCount(auto_input(b), (input('Enter number of conditions:'), input('Enter plated volume:')))
+        a.run_and_plot()
+
+
 if __name__ == '__main__':
     troubleshoot()
 
     # (a, b) = manual_input()
-    experiment_2_5 = [['1e', '1f', '1g', '1h', '2e', '2f', '2g', '2h', '3e', '3f', '3g', '3h',
-                       '4e', '4f', '4g', '4h', '5e', '5f', '5g', '5h', '6e', '6f', '6g', '6h'],
-                      [0, 0, 0, 0, 127, 5, 9, 0, 22, 0, 0, 0, 25, 27, 0, 0, 20, 3, 0, 0, 35, 2, 0, 0],
-                      [0, 0, 0, 0, 21, 1, 0, 0, 32, 3, 0, 0, 54, 5, 0, 0, 42, 2, 0, 0, 17, 1, 1, 0]]
-    c = (6, 15)
-    wao = BiofilmCfuCount(experiment_2_5, c)
-    wao.run_and_plot()
+    # experiment_2_5 = [['1e', '1f', '1g', '1h', '2e', '2f', '2g', '2h', '3e', '3f', '3g', '3h',
+    #                    '4e', '4f', '4g', '4h', '5e', '5f', '5g', '5h', '6e', '6f', '6g', '6h'],
+    #                   [0, 0, 0, 0, 127, 5, 9, 0, 22, 0, 0, 0, 25, 27, 0, 0, 20, 3, 0, 0, 35, 2, 0, 0],
+    #                   [0, 0, 0, 0, 21, 1, 0, 0, 32, 3, 0, 0, 54, 5, 0, 0, 42, 2, 0, 0, 17, 1, 1, 0]]
+    # c = (6, 15)
+    # wao = BiofilmCfuCount(experiment_2_5, c)
+    # wao.run_and_plot()
 
+    # auto_input(r"C:\Users\Andres\Documents\HTML\Smutans\formatted experiment 2-5.xlsx")
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    run_program()
