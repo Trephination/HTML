@@ -60,9 +60,20 @@ def auto_input(filename_location):
     :return: tuple of lists with data labels and names
     """
     ds = pd.read_excel(filename_location, header=None)
+    collection = []
+
+    # print(ds.columns)
 
     for i in range(len(ds.columns)):
-        print(ds.values.T[i].tolist())
+        collection.append(ds.values.T[i].tolist())
+        # print(ds.values.T[i].tolist())
+
+    print(collection)
+    sorted_collection = [[] for i in range(len(collection[0]))]
+
+    for j in collection:
+        for k in range(len(j)):
+            pass
 
 
 class BiofilmCfuCount(object):
